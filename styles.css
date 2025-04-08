@@ -1,0 +1,398 @@
+:root {
+    --primary-color: #4a6bff;
+    --primary-dark: #3a56cc;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Add this to your existing CSS */
+#getScoreBtn {
+    margin: 20px auto;
+    display: block;
+    padding: 12px 24px;
+    width: auto;
+    max-width: 200px;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Login Page Styles */
+.login-container {
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.app-logo {
+    margin-bottom: 30px;
+}
+
+.app-logo i {
+    font-size: 50px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.app-logo h1 {
+    color: var(--dark-color);
+    font-size: 24px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 107, 255, 0.2);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-primary:disabled {
+    background-color: var(--secondary-color);
+    cursor: not-allowed;
+}
+
+.login-footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+
+.login-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* App Header */
+.app-header {
+    padding: 15px 0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.app-header h2 {
+    color: var(--dark-color);
+    font-size: 20px;
+}
+
+.back-btn {
+    position: absolute;
+    left: 0;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Subjects Page */
+.content {
+    flex: 1;
+}
+
+.subject-list, .question-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.subject-card, .question-card {
+    background: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.subject-card:hover, .question-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.subject-icon, .question-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(74, 107, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+.subject-info, .question-info {
+    flex: 1;
+}
+
+.subject-name, .question-text {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--dark-color);
+}
+
+.subject-code, .question-number {
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+
+/* Upload Page */
+.upload-container {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.question-info {
+    background-color: #f0f4ff;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+}
+
+.question-info h3 {
+    margin-bottom: 5px;
+    color: var(--dark-color);
+}
+
+.question-info p {
+    color: var(--secondary-color);
+    font-size: 14px;
+}
+
+.upload-area {
+    border: 2px dashed var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    background-color: rgba(74, 107, 255, 0.05);
+}
+
+.upload-area i {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.upload-area p {
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.preview-area {
+    min-height: 200px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+.preview-area img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.preview-area p {
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 20px;
+}
+
+#existingSubmission {
+    background-color: #f0f8ff;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+}
+
+#existingSubmission p {
+    margin-bottom: 8px;
+    color: var(--dark-color);
+}
+
+#previousSubmission img {
+    max-width: 100%;
+    max-height: 150px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    max-width: 90%;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.loader i {
+    font-size: 50px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.success-icon i {
+    font-size: 50px;
+    color: var(--success-color);
+    margin-bottom: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px;
+    }
+    
+    .app-logo i {
+        font-size: 40px;
+    }
+    
+    .app-logo h1 {
+        font-size: 20px;
+    }
+    
+    .subject-card, .question-card {
+        padding: 15px;
+    }
+    
+    .subject-icon, .question-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+/* Add this to your existing CSS */
+.scores-list {
+    margin: 20px 0;
+}
+
+.score-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.score-question {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.score-value {
+    font-size: 1.2em;
+    color: #2c7be5;
+    margin: 5px 0;
+}
+
+.score-feedback {
+    color: #666;
+    margin: 5px 0;
+    font-style: italic;
+}

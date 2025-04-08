@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Paper Checking System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div class="page" id="loginPage">
+        <div class="login-container">
+            <div class="app-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>Exam Checker</h1>
+            </div>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn-primary">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+            </form>
+            <div class="login-footer">
+                <p>Don't have an account? <a href="#" id="registerLink">Register</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subjects Page -->
+    <div class="page hidden" id="subjectsPage">
+        <header class="app-header">
+            <button class="back-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+            <h2>Select Subject</h2>
+        </header>
+        <div class="content">
+            <div class="subject-list" id="subjectList">
+                <!-- Subjects will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Questions Page -->
+    <div class="page hidden" id="questionsPage">
+        <header class="app-header">
+            <button class="back-btn" id="backToSubjects">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h2 id="questionsPageTitle">Select Question</h2>
+        </header>
+        <div class="content">
+            <div class="question-list" id="questionList">
+                <!-- Questions will be loaded here -->
+            </div>
+            <!-- Add the Get Scores button here -->
+            <button id="getScoreBtn" class="btn-primary">
+                <i class="fas fa-chart-bar"></i> Get My Scores
+            </button>
+        </div>
+    </div>
+
+    <!-- Upload Page -->
+    <div class="page hidden" id="uploadPage">
+        <header class="app-header">
+            <button class="back-btn" id="backToQuestions">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h2 id="uploadPageTitle">Upload Answer Sheet</h2>
+        </header>
+        <div class="content">
+            <div class="upload-container">
+                <div class="question-info" id="questionInfo">
+                    <!-- Question details will appear here -->
+                </div>
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Tap to upload answer sheet</p>
+                    <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                </div>
+                <div class="preview-area" id="previewArea">
+                    <p>No image selected</p>
+                </div>
+                <div id="existingSubmission" class="hidden">
+                    <p>You already submitted an answer for this question:</p>
+                    <div id="previousSubmission"></div>
+                </div>
+                <button id="submitBtn" class="btn-primary" disabled>
+                    <i class="fas fa-paper-plane"></i> Submit
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Processing Modal -->
+    <div class="modal hidden" id="processingModal">
+        <div class="modal-content">
+            <div class="loader">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
+            <p>Processing your answer sheet...</p>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal hidden" id="successModal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Success!</h3>
+            <p>Your answer sheet has been submitted successfully.</p>
+            <button class="btn-primary" id="successOkBtn">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
